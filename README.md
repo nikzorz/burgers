@@ -1,3 +1,20 @@
+# Features
+
+- App router
+- SSR + SSG
+- TypeScript
+- Tailwind
+- Server Actions
+- React 19 hooks (useActionState, useOptimistic, use)
+- NextJS 15
+- [https://ui.shadcn.com/docs](ShadCN) for Components
+- Prettier, ESLint, Husky, Lint-Staged
+- Deployed on Vercel
+- Vercel KV for data storage
+- [https://authjs.dev/](AuthJS V5)
+- Storybook [work in progress]
+- Testing [work in progress]
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
