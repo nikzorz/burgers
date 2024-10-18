@@ -25,7 +25,12 @@ export function AddToCart({
         await actionWithProduct();
       }}
     >
-      <Button {...props} type="submit" aria-label="Add to cart">
+      <Button
+        className={className}
+        {...props}
+        type="submit"
+        aria-label="Add to cart"
+      >
         {children}
       </Button>
       <p aria-live="polite" className="sr-only" role="status">

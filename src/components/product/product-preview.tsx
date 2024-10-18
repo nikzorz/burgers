@@ -24,11 +24,11 @@ export function ProductPreview({ product }: ProductPreviewProps) {
           </AspectRatio>
         </Link>
         <div className="flex flex-1 flex-col space-y-2 p-4">
-          <h3 className="text-xl font-semibold">{product.name}</h3>
-          <p className="flex-1 text-gray-500 dark:text-gray-400">
+          <h3 className="font-semibold md:text-xl">{product.name}</h3>
+          <p className="sm:text-md flex-1 text-sm text-gray-500 dark:text-gray-400">
             {product.description}
           </p>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col items-center justify-between md:flex-row">
             <span className="text-lg font-bold">
               {formatPennyValue(product.price)}
             </span>

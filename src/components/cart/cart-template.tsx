@@ -50,18 +50,21 @@ export function CartTemplate() {
                   {formatPennyValue(item.price)} x {item.quantity}
                 </p>
               </div>
-              <div className="flex items-center space-x-2">
-                <EditProductQuantityButton
-                  item={item}
-                  type="minus"
-                  optimisticUpdate={updateCartItem}
-                />
-                <div className="px-4 text-center">{item.quantity}</div>
-                <EditProductQuantityButton
-                  item={item}
-                  type="plus"
-                  optimisticUpdate={updateCartItem}
-                />
+              <div className="flex items-center gap-x-4 md:gap-x-12">
+                <div className="flex flex-col-reverse items-center gap-x-2 gap-y-4 md:flex-row">
+                  <EditProductQuantityButton
+                    item={item}
+                    type="minus"
+                    optimisticUpdate={updateCartItem}
+                  />
+                  <div className="px-4 text-center">{item.quantity}</div>
+                  <EditProductQuantityButton
+                    item={item}
+                    type="plus"
+                    optimisticUpdate={updateCartItem}
+                  />
+                </div>
+
                 <DeleteProductButton
                   productId={item.id}
                   optimisticUpdate={updateCartItem}

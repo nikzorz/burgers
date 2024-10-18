@@ -39,6 +39,7 @@ export function EditProductQuantityButton({
 
   return (
     <form
+      className="inline-block"
       action={async () => {
         optimisticUpdate(payload.productId, type);
         await actionWithVariant();

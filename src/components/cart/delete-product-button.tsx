@@ -24,7 +24,7 @@ export function DeleteProductButton({
         await actionWithProduct();
       }}
     >
-      <Button type="submit" size="icon" variant="outline">
+      <Button type="submit" size="icon" variant="destructive">
         <Trash2 className="h-4 w-4" />
         <span className="sr-only">Remove item</span>
       </Button>
