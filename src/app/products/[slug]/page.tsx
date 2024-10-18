@@ -3,12 +3,6 @@ import { getProductBySlug, getProductList } from "@/lib/burger-service";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-type ProductPageProps = {
-  params: {
-    slug: string;
-  };
-};
-
 export async function generateStaticParams() {
   const { products } = await getProductList();
 
@@ -31,6 +25,14 @@ export async function generateMetadata(props: {
   return {
     title: `${product.name} | Burger Store`,
     description: product.description,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
+    },
     openGraph: {
       title: `${product.name} | Burger Store`,
       description: product.description,
@@ -39,8 +41,10 @@ export async function generateMetadata(props: {
   };
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
-  const { slug } = params;
+export default async function ProductPage(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await props.params;
 
   const product = await getProductBySlug(slug);
 
