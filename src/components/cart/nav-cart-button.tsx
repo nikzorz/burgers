@@ -1,11 +1,23 @@
+"use client";
+
+import { createCartAndSetCookie } from "@/components/cart/actions";
+import { useCart } from "@/components/cart/cart-context";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function NavCartButton() {
-  // TODO replace with real data
-  const totalItems = 2;
+  const { cart } = useCart();
+  const totalItems =
+    cart?.items.reduce((acc, item) => acc + item.quantity, 0) || 0;
+
+  useEffect(() => {
+    if (!cart) {
+      createCartAndSetCookie();
+    }
+  }, [cart]);
 
   return (
     <div className="relative inline-block">

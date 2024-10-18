@@ -1,3 +1,4 @@
+import { AddToCart } from "@/components/cart/add-to-cart";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import {
@@ -114,9 +115,9 @@ export default async function ProductPage(props: {
           <Separator />
         </CardContent>
         <CardFooter>
-          <Button className="w-full" size="lg">
+          <AddToCart className="w-full" size="lg" product={product}>
             Add to Cart
-          </Button>
+          </AddToCart>
         </CardFooter>
       </Card>
     </div>

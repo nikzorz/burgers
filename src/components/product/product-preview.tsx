@@ -1,5 +1,5 @@
+import { AddToCart } from "@/components/cart/add-to-cart";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Button } from "@/components/ui/button";
 import { ProductRecord } from "@/types";
 import { formatPennyValue } from "@/utils/helpers";
 import Image from "next/image";
@@ -32,7 +32,7 @@ export function ProductPreview({ product }: ProductPreviewProps) {
             <span className="text-lg font-bold">
               {formatPennyValue(product.price)}
             </span>
-            <Button>Add to Cart</Button>
+            <AddToCart product={product}>Add to Cart</AddToCart>
           </div>
         </div>
       </div>
