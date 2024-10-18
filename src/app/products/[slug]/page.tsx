@@ -1,5 +1,6 @@
 import ProductTemplate from "@/components/product/product-template";
 import { getProductBySlug, getProductList } from "@/lib/burger-service";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 type ProductPageProps = {
@@ -16,8 +17,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: ProductPageProps) {
-  const { slug } = params;
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await props.params;
 
   const product = await getProductBySlug(slug);
 
